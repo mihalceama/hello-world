@@ -73,5 +73,5 @@ int Object::equals (Object& obj)
         cout << endl;
         cout << "Adrese diferite";
     }
-
+    cout<<endl;
  }
