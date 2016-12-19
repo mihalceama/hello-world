@@ -1,0 +1,77 @@
+#include<iostream>
+
+
+using namespace std;
+
+class Object
+{
+public:
+ void print();
+ int equals (Object& obj);
+
+    Object()
+    {
+
+    }
+
+    Object(int a)
+    {
+
+    }
+};
+ int operator == ( Object& ob1, Object& ob2) { return ob1.equals(ob2);}
+
+ void Object::print ()
+{
+ cout << this;
+}
+
+int Object::equals (Object& obj)
+{
+ return this == &obj;
+}
+
+ int main()
+ {
+    Object *obj = new Object();
+    Object a;
+    obj->print();
+    cout<<endl;
+    a.print();
+    if(a == *obj)
+    {
+        cout<<endl;
+        cout<<"Aceeasi adresa";
+    }
+
+    else
+    {
+        cout<<endl;
+        cout<<"Adrese diferite";
+    }
+    cout<<endl;
+    if(obj->equals(*obj))
+    {
+        cout << endl;
+        cout << "Aceeasi adresa";
+
+    }
+    else
+    {
+        cout << endl ;
+        cout << "Adrese diferite";
+    }
+    cout>>endl;
+    Object *abj = new Object();
+    if(obj->equals(*abj))
+    {
+        cout << endl;
+        cout << "Aceeasi adresa";
+    }
+    else
+    {
+        cout << endl;
+        cout << "Adrese diferite";
+    }
+
+ }
